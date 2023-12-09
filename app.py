@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 # Load the model
-with open('Churnpickle.pkl', 'rb') as model_file:
+with open('Churnpickle', 'rb') as model_file:
     model = pickle.load(model_file)
 
 # Streamlit app

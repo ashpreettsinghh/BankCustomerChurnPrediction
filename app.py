@@ -16,10 +16,10 @@ def country(cname):
         return 3
 
 # Streamlit app
-st.title('Credit Scoring Prediction')
+st.title('Bank Customer Churn Prediction')
 
 # Sidebar with user input
-st.sidebar.header('User Input Features')
+st.sidebar.header('User Input(s)')
 
 # Create a dictionary to store user input
 user_input = {}
@@ -52,6 +52,6 @@ if st.button('Predict'):
     
     # Display whether the customer has exited the bank or not
     if prediction == 0:
-        st.write('The customer is predicted to not have exited the bank.')
+        st.write('The customer is predicted to **NOT** have exited the bank.')
     else:
         st.write('The customer is predicted to have exited the bank.')

@@ -49,4 +49,9 @@ st.write(user_data)
 if st.button('Predict'):
     prediction = model.predict(user_data)
     st.subheader('Prediction:')
-    st.write(prediction)
+    
+    # Display whether the customer has exited the bank or not
+    if prediction == 0:
+        st.write('The customer is predicted to not have exited the bank.')
+    else:
+        st.write('The customer is predicted to have exited the bank.')

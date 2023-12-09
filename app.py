@@ -6,6 +6,15 @@ import pandas as pd
 with open('Churnpickle', 'rb') as model_file:
     model = pickle.load(model_file)
 
+# Function to convert country name to numeric value
+def country(cname):
+    if cname == 'France':
+        return 1
+    elif cname == 'Germany':
+        return 2
+    elif cname == 'Spain':
+        return 3
+
 # Streamlit app
 st.title('Credit Scoring Prediction')
 
@@ -25,7 +34,9 @@ user_input['HasCrCard'] = st.sidebar.selectbox('Has Credit Card', [0, 1])
 user_input['IsActiveMember'] = st.sidebar.selectbox('Is Active Member', [0, 1])
 user_input['EstimatedSalary'] = st.sidebar.number_input('Estimated Salary', min_value=0.0, value=50000.0)
 user_input['Male'] = st.sidebar.selectbox('Gender (Male=1, Female=0)', [0, 1])
-user_input['Country_val'] = st.sidebar.selectbox('Country', ['Country1', 'Country2', 'Country3'])  # Replace with actual country names
+
+# Add a selectbox for country with the converted numeric values
+user_input['Country_val'] = country(st.sidebar.selectbox('Country', ['France', 'Germany', 'Spain']))
 
 # Create a DataFrame from user input
 user_data = pd.DataFrame([user_input])

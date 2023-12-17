@@ -55,3 +55,5 @@ if st.button('Predict'):
         st.write('The customer is predicted to **NOT** have exited the bank.')
     else:
         st.write('The customer is predicted to have exited the bank.')
+
+st.title("Made by Ashpreet Singh - 01913202720 - Project ")
